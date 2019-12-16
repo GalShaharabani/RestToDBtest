@@ -7,7 +7,8 @@ package com.company.ClassAssignmentREST.beans;
 	import javax.persistence.Column;
 	import javax.persistence.Entity;
 	import javax.persistence.GeneratedValue;
-	import javax.persistence.Id;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 	import javax.persistence.OneToMany;
 
 import org.springframework.stereotype.Component;
@@ -42,7 +43,7 @@ import org.springframework.stereotype.Component;
 
 
 		@Id
-		@GeneratedValue
+		@GeneratedValue(strategy = GenerationType.AUTO)
 		public long getId() {
 			return id;
 		}

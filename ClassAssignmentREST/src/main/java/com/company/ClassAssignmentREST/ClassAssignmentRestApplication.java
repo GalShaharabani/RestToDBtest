@@ -31,9 +31,11 @@ public class ClassAssignmentRestApplication {
 		
 		Employee employee=ctx.getBean(Employee.class);
 		
+		
 		employee.setId(555566221);
 		employee.setName("avram");
 		employee.setSalary(300000.00);
+		employee.setJobs(jobs);
 		
 		RestTemplate restTemplate = new RestTemplate();
 		System.out.println(restTemplate.getForObject("http://localhost:8080/company/getAll2", String.class));
