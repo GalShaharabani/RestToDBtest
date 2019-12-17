@@ -10,4 +10,5 @@ import com.company.ClassAssignmentREST.beans.Employee;
 
 public interface EmployeeRepository extends JpaRepository<Employee,Long>{
 	List<Employee> findEmployeeByName(String name);
+	Employee findEmployeeById(String id);
 }

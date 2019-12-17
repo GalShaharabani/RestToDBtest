@@ -48,8 +48,8 @@ public class CompanyController {
 	}
 	
 	@GetMapping("/getById")
-	public ResponseEntity<?> getEmployeeById(@PathVariable(name = "id") String id) {
-		return new ResponseEntity<Employee>(service.getEmployeeById(id), HttpStatus.OK);
+	public ResponseEntity<?> getEmployeeById(@RequestParam(name = "id") String id) {
+		return new ResponseEntity<Employee>(service.getEmployeeById(Long.parseLong(id)), HttpStatus.OK);
 	}
 	
 	

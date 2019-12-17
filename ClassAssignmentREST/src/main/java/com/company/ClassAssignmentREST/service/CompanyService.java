@@ -2,6 +2,7 @@ package com.company.ClassAssignmentREST.service;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -29,8 +30,12 @@ public class CompanyService {
 		return e.getId();
 	}
 	
-	public Employee getEmployeeById(String empId){
-		return empRepo.findById(Long.parseLong(empId)).get();
+	public List<Job> addJob(List<Job> jobs) {
+		return (List<Job>) jobRepo.saveAll(jobs);
+	}
+	
+	public Employee getEmployeeById(long id){
+		return empRepo.findById(id).get();
 	}
 	
 	
